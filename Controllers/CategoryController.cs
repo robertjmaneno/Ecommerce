@@ -2,7 +2,8 @@
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
-///hey
+//dzuwa
+//rb
 namespace Ecommerce.Controllers
 {
     public class CategoryController : Controller
