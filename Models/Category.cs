@@ -8,7 +8,6 @@ namespace Ecommerce.Models
 
         [Key]
         public int CategoryId { get; set; }
-
         [Required(ErrorMessage ="The Category name is required")]      
         [DisplayName("Category Name")]
         public required string Name { get; set; }

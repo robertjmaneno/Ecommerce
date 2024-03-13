@@ -28,6 +28,12 @@ namespace Ecommerce.Controllers
         [HttpPost]
 		public IActionResult Create(Category category)
 		{
+
+
+            if(category.Name==category.DisplayOrder.ToString())
+            {
+
+            }
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(category);
@@ -36,5 +42,30 @@ namespace Ecommerce.Controllers
             }
             return View();
 		}
-	}
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Edit(int? id)
+        {
+            if(id ==null && id==0) { 
+                return NotFound();
+            }
+
+            Category category = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
+            if(category==null)
+            {
+                return NotFound();
+            }
+
+            
+            return View(category);
+        }
+    }
 }

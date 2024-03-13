@@ -1,32 +1,40 @@
 ﻿@model List<Category>
 
 <div class="container">
-	<div class="row pt-5 pb-2">
-		<div class="col-6"> <h2>Category List</h2></div>
-		<div class="col-6 text-end"> <a asp-controller="Category" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i>    Create Category</a></div>
-
-	</div>
+    <div class="row pt-5 pb-2">
+        <div class="col-lg-6 col-md-6 col-sm-12"> <h2>Category List</h2></div>
+        <div class="col-lg-6 col-md-6 col-sm-12 text-lg-end text-md-end text-sm-start"> <a asp-controller="Category" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i>    Create Category</a></div>
+    </div>
 </div>
 
-<table class="table table-bordered table-striped">
-	<thead>
-	<tr>
-	<th>Category Name </th>
-	<th>Displaying Order</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-			@foreach (var obj in Model.OrderBy(u=>u.DisplayOrder))
-			{
-				<tr>
-				<td>@obj.Name</td>
-				<td>@obj.DisplayOrder</td>
-				</tr>
-				
-			}
-		
-		
-	</tbody>
-</table>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                    <th>Displaying Order</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+                {
+                    <tr>
+                        <td>@obj.Name</td>
+                        <td>@obj.DisplayOrder</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id="@obj.CategoryId"> <i class="bi bi-pencil-square"></i> Edit</a>
+                            </div>
+                            
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-danger" asp-controller="Category" asp-action="Delete"> <i class="bi bi-trash"></i> Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
