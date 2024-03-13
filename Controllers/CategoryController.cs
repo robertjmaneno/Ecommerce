@@ -2,8 +2,6 @@
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
-//dzuwa
-//rb
 namespace Ecommerce.Controllers
 {
     public class CategoryController : Controller
@@ -29,12 +27,14 @@ namespace Ecommerce.Controllers
 
         [HttpPost]
 		public IActionResult Create(Category category)
-
 		{
-
-            _db.Categories.Add(category);
-            _db.SaveChanges();
-			return RedirectToAction("Index", "Category");
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(category);
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Category");
+            }
+            return View();
 		}
 	}
 }
