@@ -58,14 +58,14 @@ namespace Ecommerce.Controllers
                 return NotFound();
             }
 
-            Category category = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
-            if(category==null)
+            Category categoryFromDatabase = _db.Categories.FirstOrDefault(u=>u.CategoryId==id);
+            if(categoryFromDatabase == null)
             {
                 return NotFound();
             }
 
             
-            return View(category);
+            return View(categoryFromDatabase);
         }
     }
 }
