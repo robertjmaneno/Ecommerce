@@ -29,7 +29,7 @@
                             </div>
                             
                             <div class="btn-group" role="group">
-                                <a class="btn btn-delete" asp-controller="Category" asp-action="Delete"> <i class="bi bi-trash"></i> Delete</a>
+                                <a class="btn btn-danger" asp-controller="Category" asp-route-id="@obj.CategoryId" asp-action="Delete"> <i class="bi bi-trash"></i> Delete</a>
                             </div>
                         </td>
                     </tr>

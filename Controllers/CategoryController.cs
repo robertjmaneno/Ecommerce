@@ -80,6 +80,42 @@ namespace Ecommerce.Controllers
 			return View(category);
 		}
 
+		[HttpGet]
+		public IActionResult Delete(int? id)
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			Category? categoryFromDatabase = _db.Categories.FirstOrDefault(u => u.CategoryId == id);
+			if (categoryFromDatabase == null)
+			{
+				return NotFound();
+			}
+
+			return View(categoryFromDatabase);
+		}
+
+		[HttpPost, ActionName("Delete")]
+		public IActionResult Delete(int id)
+		{
+			Category? category = _db.Categories.FirstOrDefault(u => u.CategoryId == id);
+			if (category == null)
+			{
+				return NotFound();
+			}
+
+			_db.Categories.Remove(category);
+			_db.SaveChanges();
+			return RedirectToAction("Index", "Category");
+		}
+
+
+
+
+
+
 
 	}
 }
