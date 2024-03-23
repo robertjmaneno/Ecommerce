@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce", "Ecommerce.csproj", "{6734F218-9D01-4EBF-9B35-0641DEE74FC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "razaorPagesWeb", "..\razaorPagesWeb\razaorPagesWeb.csproj", "{B70696E1-8EE0-4A73-962D-424E1A5E092C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{6734F218-9D01-4EBF-9B35-0641DEE74FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6734F218-9D01-4EBF-9B35-0641DEE74FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6734F218-9D01-4EBF-9B35-0641DEE74FC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B70696E1-8EE0-4A73-962D-424E1A5E092C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B70696E1-8EE0-4A73-962D-424E1A5E092C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B70696E1-8EE0-4A73-962D-424E1A5E092C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B70696E1-8EE0-4A73-962D-424E1A5E092C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
